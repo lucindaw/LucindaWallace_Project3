@@ -1,0 +1,383 @@
+@import "partials/_normalize";
+@import "partials/_variables";
+@import "partials/_mixins";
+@import "partials/_article-styles";
+
+a {
+	text-decoration: none;
+	-webkit-transition:color 0.3s ease-out;
+	-ms-transition:color 0.3s ease-out;
+	transition:color 0.3s ease-out;
+}
+
+body {
+	background: $light;
+}
+
+.header {
+	margin-top: 150px;
+	font: 200px $sans;
+	color: #FFF;
+	text-align: center;
+	@include bp(medium) {
+		font-size: 120px;
+	}
+	@include bp(small) {
+		margin-top: 70px;
+		font-size: 100px;
+	}
+
+}
+
+.bgvideo {
+	@include bp(large) {
+		display: none;
+	}
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -10;
+	transform: translate(-50%, -50%);
+}
+
+.carousel {
+	@include bp(x-large) {
+		display: none;
+	}
+	@include bp(large) {
+		display: block;
+	}
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -10;
+	transform: translate(-50%, -50%);
+	
+}
+
+
+// ------------------------------------------------
+// NAVIGATION
+// ------------------------------------------------
+
+nav ul {
+	text-align: center;
+	list-style: none;
+	text-transform: uppercase;
+	li {
+		@include bp(small) {
+			display: block;
+		}
+		display: inline-block;
+	}
+	a {
+		@include bp(medium) {
+			width: 120px;
+			margin: 10px;
+			font-size: 20px;
+		}
+		@include bp(small) {
+			width: 80%;
+			margin: 15px;
+			font-size: 20px;
+		}
+		display: block;
+		width: 160px;
+		background: rgba(0,0,0,0.65);
+		margin: 20px;
+		padding: 10px;
+		font: 24px $sans;
+		color: #FFF;
+		border: 2px solid #FFF;
+		border-radius: 2px;
+		&:hover {
+			color: $highlight;
+		}
+		&:active {
+			border-bottom: 1px solid $darker;
+		}
+	}
+}
+
+h1 {
+	@include bp(small) {
+		font-size: 42px;
+	}
+	font: 52px $sans;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 20px 0;
+}
+
+
+// ------------------------------------------------
+// ABOUT
+// ------------------------------------------------
+
+.about {
+	position: relative;
+	margin-top: 100px;
+	padding: 60px 50px 100px 50px;
+	background: $light;
+	text-align: center;
+	img {
+		width: 300px;
+		height: 300px;
+		margin-top: 10px;
+		border-radius: 50%;
+	}
+	p {
+		@include bp(small) {
+			font-size: 24px;
+			line-height: 32px;
+		}
+		margin-top: 20px;
+		font: 28px/40px $serif;
+	}
+}
+
+
+// ------------------------------------------------
+// DANCING
+// ------------------------------------------------
+
+
+.dancing {
+	position: relative;
+	background: $lighter;
+	padding: 60px 0 100px 0;
+}
+
+.video {
+	@include bp(medium) {
+		width: 500px;
+	}
+	@include bp(small) {
+		width: 400px;
+	}
+	width: 560px;
+	margin: 10px;
+	text-align: center;
+	iframe {
+		@include bp(medium) {
+			width: 500px;
+			height: 281px;
+		}
+		@include bp(small) {
+			width: 400px;
+			height: 225px;
+		}
+		width: 560px;
+		height: 315px;
+	}
+	h2 {
+		@include bp(small) {
+			font-size: 28px;
+		}
+		margin: 20px 0 5px 0;
+		font: 30px/32px $sans;
+		padding: 0 20px;
+	}
+	p {
+		margin: 0;
+		font: 16px/20px $serif;
+		padding: 5px 20px;
+	}
+}
+
+
+// ------------------------------------------------
+// SPINNING
+// ------------------------------------------------
+
+
+.spinning {
+	position: relative;
+	width: 100%;
+	background: $light;
+	padding: 60px 0 100px 0;
+}
+
+.event {
+	float: left;
+	width: 300px;
+	height: 464px;
+	overflow: hidden;
+	margin: 10px 10px 20px 10px;
+	background: #FFF;
+	img {
+		width: 100%;
+	}
+		&:hover .overlay {
+			display: block;
+		}
+}
+
+.event .overlay {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,0.8);
+	color: white;
+	padding: 60px 30px;
+	display: none;
+	text-align: center;
+	h4 {
+		font: 700 16px/20px $sans;
+		color: $light;
+		text-transform: uppercase;
+	}
+	h2 {
+		margin: 10px 0 0 0;
+		font: 700 34px/36px $sans;
+	}
+	p {
+		margin-top: 5px;
+		font: 16px/22px $serif;
+	}
+	a {
+		font: 16px $sans;
+		text-transform: uppercase;
+		color: $highlight;
+			&:visited {
+				color: $dark;
+			}
+	}
+}
+
+
+
+// ------------------------------------------------
+// WRITING
+// ------------------------------------------------
+
+
+.writing {
+	position: relative;
+	width: 100%;
+	background: $lighter;
+	padding: 60px 0 120px 0;
+}
+
+.article {
+	float: left;
+	width: 360px;
+	height: 400px;
+	margin: 10px 10px 20px 10px;
+	background: #FFF;
+	padding: 20px;
+	img {
+		width: 100%;
+		// height: 170px;
+		overflow: hidden;
+		// min-width: 100%;
+		// min-height: 100%;
+		// width: auto;
+		// height: auto;
+	}
+	h2 {
+		margin: 10px 0;
+		font: 30px/32px $sans;
+			a:visited {
+				color: $darker;
+			}
+			a:hover {
+				color: #111;
+			}
+	}
+	p {
+		margin: 0;
+		font: normal 18px/24px $serif;
+	}
+	a {
+		color: $darker;
+	}
+}
+
+
+// ------------------------------------------------
+// BACK-TO-TOP ARROWS
+// ------------------------------------------------
+
+
+a.up-arrow-wrap {
+ position: absolute;
+ z-index: 10;
+ left: 50%;
+ bottom: -5em;
+ margin-left: -5em;
+ background: #111;
+ width: 10em;
+ height: 10em;
+ padding: 3em 2em;
+ border-radius: 50%;
+ font-size: 0.5em;
+ display: block;
+}
+
+.up-arrow {
+	float: left;
+	position: relative;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 3em 3em 0 3em;
+	border-color: #ffffff transparent transparent transparent;
+	@include vendorize (transform, rotate(180deg));
+}
+
+.up-arrow:after {
+	content: '';
+	position: absolute;
+	top: -3.2em;
+	left: -3em;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 3em 3em 0 3em;
+	border-color: #111 transparent transparent transparent;
+	-webkit-transform: rotate(360deg)
+	}
+
+// ------------------------------------------------
+// FOOTER
+// ------------------------------------------------
+
+footer {
+	@include bp(medium) {
+		width: 300px;
+	}
+	clear: both;
+	height: 250px;
+	margin: 0 auto;
+	padding: 80px 0 0 0;
+	text-align: center;
+	a {
+		@include bp(small) {
+			clear: both;
+		}
+		margin: 10px; 
+		background: #111;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		display: inline-block;
+		
+		font-size: 30px;
+		line-height: 50px;
+		color: rgba(255,255,255,0.6);
+		padding: 5px 10px;
+			&:hover {
+				color:rgba(255,255,255,1);
+			}
+	}
+}
